@@ -1,5 +1,6 @@
 package maximedelange.btcminerstatistics;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,8 +9,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 
 public class HomeScreen extends AppCompatActivity {
+
+    // Fields
+    private ImageButton gotoUserScreen = null;
+    private ImageButton gotoPoolScreen = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +24,8 @@ public class HomeScreen extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        navigateToUserScreen();
+        navigateToPoolScreen();
     }
 
     @Override
@@ -48,5 +48,27 @@ public class HomeScreen extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void navigateToUserScreen(){
+        gotoUserScreen = (ImageButton) findViewById(R.id.btnUserScreen);
+        gotoUserScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent userScreen = new Intent(view.getContext(), UserScreen.class);
+                startActivity(userScreen);
+            }
+        });
+    }
+
+    public void navigateToPoolScreen(){
+        gotoPoolScreen = (ImageButton) findViewById(R.id.btnPoolScreen);
+        gotoPoolScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent poolScreen = new Intent(view.getContext(), PoolScreen.class);
+                startActivity(poolScreen);
+            }
+        });
     }
 }
