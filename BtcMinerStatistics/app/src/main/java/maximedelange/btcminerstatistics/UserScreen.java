@@ -15,6 +15,12 @@ public class UserScreen extends AppCompatActivity {
         setContentView(R.layout.activity_user_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        changeNavigationBar();
     }
 
+    public void changeNavigationBar(){
+        setTitle("Account information");
+        //getActionBar().setIcon(R.mipmap.ic_launcher);
+    }
 }

@@ -8,113 +8,109 @@
     tools:context="maximedelange.btcminerstatistics.UserScreen"
     tools:showIn="@layout/activity_user_screen">
 
-    <TextView
-        android:id="@+id/txtUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="16dp"
-        android:text="Username"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
-    <TextView
-        android:id="@+id/txtMineRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Mine rating"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/txtHashrate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hash rate"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteY="92dp" />
 
-    <TextView
-        android:id="@+id/txtUnconfirmedReward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="Unconfirmed reward"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="35dp" />
+        <TextView
+            android:id="@+id/txtUnconfirmedReward"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Unconfirmed reward"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteY="35dp" />
 
-    <TextView
-        android:id="@+id/txtEstimatedReward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="Estimated reward"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="54dp" />
+        <TextView
+            android:id="@+id/txtLastShare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Last share"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteY="73dp" />
 
-    <TextView
-        android:id="@+id/txtConfirmedReward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="252dp"
-        android:text="Confirmed reward"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="54dp" />
+        <TextView
+            android:id="@+id/txtUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtSendThreshold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="Send threshold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="73dp" />
+        <TextView
+            android:id="@+id/txtSendThreshold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send threshold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteY="73dp" />
 
-    <TextView
-        android:id="@+id/txtWorkers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="Workers"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="130dp" />
+        <TextView
+            android:id="@+id/txtWorkers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Workers"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteY="130dp" />
 
-    <TextView
-        android:id="@+id/txtLastShare"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
-        android:text="Last share"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="73dp" />
+        <TextView
+            android:id="@+id/txtScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Score"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteY="111dp" />
 
-    <TextView
-        android:id="@+id/txtScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="Score"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="111dp" />
+        <TextView
+            android:id="@+id/txtWallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wallet"
+            tools:layout_editor_absoluteX="323dp"
+            tools:layout_editor_absoluteY="35dp" />
 
-    <TextView
-        android:id="@+id/txtWallet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wallet"
-        tools:layout_editor_absoluteX="323dp"
-        tools:layout_editor_absoluteY="35dp" />
+        <TextView
+            android:id="@+id/txtConfirmedReward"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirmed reward"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteY="54dp" />
 
-    <TextView
-        android:id="@+id/txtAlive"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="Alive"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="149dp" />
+        <TextView
+            android:id="@+id/txtEstimatedReward"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estimated reward"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteY="54dp" />
 
-    <TextView
-        android:id="@+id/txtHashrate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="Hash rate"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="92dp" />
+        <TextView
+            android:id="@+id/txtAlive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alive"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteY="149dp" />
+
+        <TextView
+            android:id="@+id/txtMineRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mine rating"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

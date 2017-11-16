@@ -3,6 +3,7 @@ package maximedelange.btcminerstatistics;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -26,6 +27,7 @@ public class HomeScreen extends AppCompatActivity {
 
         navigateToUserScreen();
         navigateToPoolScreen();
+        changeNavigationBar();
     }
 
     @Override
@@ -70,5 +72,10 @@ public class HomeScreen extends AppCompatActivity {
                 startActivity(poolScreen);
             }
         });
+    }
+
+    public void changeNavigationBar(){
+        setTitle("Mining statistics");
+        //getActionBar().setIcon(R.mipmap.ic_launcher);
     }
 }

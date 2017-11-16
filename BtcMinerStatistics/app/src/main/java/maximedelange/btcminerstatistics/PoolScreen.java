@@ -15,6 +15,13 @@ public class PoolScreen extends AppCompatActivity {
         setContentView(R.layout.activity_pool_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        changeNavigationBar();
+    }
+
+    public void changeNavigationBar(){
+        setTitle("Pool information");
+        //getActionBar().setIcon(R.mipmap.ic_launcher);
     }
 
 }
