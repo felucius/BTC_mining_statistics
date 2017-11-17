@@ -39,51 +39,27 @@ public class User {
     }
 
     // Methods
-    public String getUsername(){
-        return this.username;
-    }
+    public String getUsername(){return this.username;}
 
-    public String getRating(){
-        return this.rating;
-    }
+    public String getRating(){return this.rating;}
 
-    public Double getUnconfirmedReward(){
-        return this.unconfirmedReward;
-    }
+    public Double getUnconfirmedReward(){return this.unconfirmedReward;}
 
-    public Double getEstimatedReward(){
-        return this.estimatedReward;
-    }
+    public Double getEstimatedReward(){return this.estimatedReward;}
 
-    public Double getHashRate(){
-        return this.hashRate;
-    }
+    public Double getHashRate(){return this.hashRate;}
 
-    public Double getConfirmedReward(){
-        return this.confirmedReward;
-    }
+    public Double getConfirmedReward(){return this.confirmedReward;}
 
-    public Double getSendThreshold(){
-        return this.sendThreshold;
-    }
+    public Double getSendThreshold(){return this.sendThreshold;}
 
-    public Integer getWorker(){
-        return this.worker;
-    }
+    public Integer getWorker(){return this.worker;}
 
-    public Double getLastShare(){
-        return this.lastShare;
-    }
+    public Double getLastShare(){return this.lastShare;}
 
-    public Double getScore(){
-        return this.score;
-    }
+    public Double getScore(){return this.score;}
 
-    public Boolean getAlive(){
-        return this.alive;
-    }
+    public Boolean getAlive(){return this.alive;}
 
-    public Double getWallet(){
-        return this.wallet;
-    }
+    public Double getWallet(){return this.wallet;}
 }
