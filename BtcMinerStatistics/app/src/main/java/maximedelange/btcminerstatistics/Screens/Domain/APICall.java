@@ -9,5 +9,23 @@ import java.net.URL;
  */
 
 public class APICall {
+    // Fields
+    private HttpURLConnection urlConnection = null;
+    private URL url = null;
+    private BufferedReader reader = null;
+    private StringBuilder builder = null;
 
+    // Constructor
+    public APICall(){
+
+    }
+
+    // Methods
+    public void getUserInformation(String url){
+
+    }
+
+    public void getPoolInformation(String url){
+
+    }
 }
