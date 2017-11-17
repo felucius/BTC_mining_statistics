@@ -1,5 +1,7 @@
 package maximedelange.btcminerstatistics.Screens.Domain;
 
+import java.util.HashMap;
+
 /**
  * Created by M on 11/17/2017.
  */
@@ -20,6 +22,7 @@ public class User {
     private Double wallet = null;
 
     private Pool pool;
+    private HashMap<Integer, JSONParser> userInformation = null;
 
     // Constructor
     public User(String username, String rating, Double unconfirmedReward, Double estimatedReward, Double hashRate,
@@ -62,4 +65,8 @@ public class User {
     public Boolean getAlive(){return this.alive;}
 
     public Double getWallet(){return this.wallet;}
+
+    public Pool getPool(){return this.pool;}
+
+    public HashMap<Integer, JSONParser> getUserInformation(){return this.userInformation;}
 }

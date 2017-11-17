@@ -1,6 +1,7 @@
 package maximedelange.btcminerstatistics.Screens.Domain;
 
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Created by M on 11/17/2017.
@@ -18,6 +19,9 @@ public class Pool {
     private Double reward = null;
     private Double miningDuration = null;
     private Date dateStarted = null;
+
+    private HashMap<Integer, User> users;
+    private HashMap<Integer, JSONParser> poolInformation;
 
     // Constructor
     public Pool(Double blocks, Boolean mature, Date dateFound, Double hash, Double confirmation, Double totalShare,
@@ -54,4 +58,8 @@ public class Pool {
     public Double getMiningDuration(){return this.miningDuration;}
 
     public Date getDateStarted(){return this.dateStarted;}
+
+    public HashMap<Integer, User> getUsers(){return this.users;}
+
+    public HashMap<Integer, JSONParser> getPoolInformation(){return this.poolInformation;}
 }
