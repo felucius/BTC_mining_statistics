@@ -19,14 +19,11 @@ public class User {
     private Double lastShare = null;
     private Double score = null;
     private Boolean alive = null;
-    private Double wallet = null;
-
-    private Pool pool;
-    private HashMap<Integer, JSONParser> userInformation = null;
+    private String wallet = null;
 
     // Constructor
     public User(String username, String rating, Double unconfirmedReward, Double estimatedReward, Double hashRate,
-                Double confirmedReward, Double sendThreshold, Integer worker, Double lastShare, Double score, Boolean alive, Double wallet){
+                Double confirmedReward, Double sendThreshold, Integer worker, Double lastShare, Double score, Boolean alive, String wallet){
         this.username = username;
         this.rating = rating;
         this.unconfirmedReward = unconfirmedReward;
@@ -39,6 +36,10 @@ public class User {
         this.score = score;
         this.alive = alive;
         this.wallet = wallet;
+    }
+
+    public User(){
+
     }
 
     // Methods
@@ -64,9 +65,5 @@ public class User {
 
     public Boolean getAlive(){return this.alive;}
 
-    public Double getWallet(){return this.wallet;}
-
-    public Pool getPool(){return this.pool;}
-
-    public HashMap<Integer, JSONParser> getUserInformation(){return this.userInformation;}
+    public String getWallet(){return this.wallet;}
 }

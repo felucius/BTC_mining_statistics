@@ -1,5 +1,8 @@
 package maximedelange.btcminerstatistics.Screens.Domain;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 
 /**
@@ -13,17 +16,71 @@ public class JSONParser {
     private HashMap<Integer, User> users = null;
     private HashMap<Integer, Pool> pools = null;
 
+    private HashMap<Integer, APICall> apiCalls = null;
+    private APICall apicall = null;
+
     // Constructor
     public JSONParser(){
 
     }
 
     // Methods
-    public HashMap<Integer, User> parseUserInformation(String userInfo){
-        return users;
+    public User parseUserInformation(){
+        apicall = new APICall();
+        String userInformation = apicall.getUserInformation("https://slushpool.com/accounts/profile/json/1685801-8b72ca0d0e6857fe67e61f50883ffe14");
+
+        try {
+            JSONObject account = new JSONObject(userInformation);
+
+            String usernameAccount = account.getString("username");
+            String unconfirmedAccount = account.getString("unconfirmed_reward");
+            String ratingAccount = account.getString("rating");
+            String sendThresholdNMCAccount = account.getString("nmc_send_threshold");
+            String unconfirmedNMCAccount = account.getString("unconfirmed_nmc_reward");
+            String estimatedAccount = account.getString("estimated_reward");
+            String hashrateAccount = account.getString("hashrate");
+            String confirmedNCMAccount = account.getString("confirmed_nmc_reward");
+            String sendThresholdAccount = account.getString("send_threshold");
+            String confirmedAccount = account.getString("confirmed_reward");
+
+            JSONObject workerObject = account.getJSONObject("workers");
+            JSONObject workerPayoutObject = workerObject.getJSONObject("felucius.bitminerrasppie");
+            String lastShareWorker = workerPayoutObject.getString("last_share");
+            String scoreWorker = workerPayoutObject.getString("score");
+            String aliveWorker = workerPayoutObject.getString("alive");
+            String shareWorker = workerPayoutObject.getString("shares");
+            String hashrateWorker = workerPayoutObject.getString("hashrate");
+
+            String walletObject = account.getString("wallet");
+
+            Double unconfirmedReward = Double.valueOf(unconfirmedAccount);
+            Double estimatedReward = Double.valueOf(estimatedAccount);
+            Double hashrate = Double.valueOf(hashrateAccount);
+            Double confirmedReward = Double.valueOf(confirmedAccount);
+            Double sendThreshold = Double.valueOf(sendThresholdAccount);
+            Integer worker = 1;
+            Double lastShare = Double.valueOf(lastShareWorker);
+            Double score = Double.valueOf(scoreWorker);
+            Boolean alive = Boolean.valueOf(aliveWorker);
+            String wallet = String.valueOf(walletObject);
+
+            this.user = new User(usernameAccount, ratingAccount, unconfirmedReward, estimatedReward, hashrate, confirmedReward,
+                    sendThreshold, worker, lastShare, score, alive, wallet);
+            //users.put(1, user);
+
+
+        }catch (JSONException jsonEx){
+            jsonEx.getLocalizedMessage();
+
+        }
+
+
+        return user;
     }
 
     public HashMap<Integer, Pool> parsePoolInformation(String poolInfo){
         return this.pools;
     }
+
+    public HashMap<Integer, APICall> getAPICalls(){return this.apiCalls;}
 }
