@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HomeScreen"
+            android:name=".Screens.Screens.HomeScreen"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,11 +20,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserScreen"
+            android:name=".Screens.Screens.UserScreen"
             android:label="@string/title_activity_user_screen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".PoolScreen"
+            android:name=".Screens.Screens.PoolScreen"
             android:label="@string/title_activity_pool_screen"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

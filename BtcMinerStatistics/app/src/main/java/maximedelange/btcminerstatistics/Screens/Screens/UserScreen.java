@@ -1,4 +1,4 @@
-package maximedelange.btcminerstatistics;
+package maximedelange.btcminerstatistics.Screens.Screens;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,12 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class PoolScreen extends AppCompatActivity {
+import maximedelange.btcminerstatistics.R;
+
+public class UserScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pool_screen);
+        setContentView(R.layout.activity_user_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -20,8 +22,7 @@ public class PoolScreen extends AppCompatActivity {
     }
 
     public void changeNavigationBar(){
-        setTitle("Pool information");
+        setTitle("Account information");
         //getActionBar().setIcon(R.mipmap.ic_launcher);
     }
-
 }

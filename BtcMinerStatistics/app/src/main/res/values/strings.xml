@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BtcMinerStatistics</string>
+    <string name="app_name">Mining statistics</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_user_screen">UserScreen</string>
     <string name="title_activity_pool_screen">PoolScreen</string>
