@@ -70,12 +70,9 @@ public class UserScreen extends AppCompatActivity {
         }
     }
 
-    // Asynchronous api call
     public void apiCall(){
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         user = jsonParser.parseUserInformation();
     }
-
-
 }

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -51,7 +52,30 @@ public class APICall {
         return null;
     }
 
-    public void getPoolInformation(String url){
+    public String getPoolInformation(String url){
+        try {
+            this.url = new URL(url);
+            urlConnection = (HttpURLConnection) this.url.openConnection();
+            urlConnection.setRequestMethod("GET");
+            urlConnection.setDoOutput(true);
+            urlConnection.connect();
 
+            reader = new BufferedReader(new InputStreamReader(this.url.openStream()));
+            builder = new StringBuilder();
+
+            String line = null;
+            while((line = reader.readLine()) != null){
+                builder.append(line + "\n");
+            }
+
+            reader.close();
+            String JSONString = builder.toString();
+            System.out.println(JSONString);
+            return JSONString;
+        }catch (IOException ioEx){
+            ioEx.getLocalizedMessage();
+        }
+
+        return null;
     }
 }

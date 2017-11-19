@@ -3,6 +3,8 @@ package maximedelange.btcminerstatistics.Screens.Domain;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -13,15 +15,19 @@ public class JSONParser {
     // Fields
     private User user = null;
     private Pool pool = null;
+    private BlockNumber blockNumber = null;
     private HashMap<Integer, User> users = null;
-    private HashMap<Integer, Pool> pools = null;
+    private HashMap<Integer, HashMap<Integer, BlockNumber>> pools = null;
+    private HashMap<Integer, BlockNumber> blockNumbers = null;
 
     private HashMap<Integer, APICall> apiCalls = null;
     private APICall apicall = null;
 
     // Constructor
     public JSONParser(){
-
+        pool = new Pool();
+        pools = new HashMap<>();
+        blockNumbers = new HashMap<>();
     }
 
     // Methods
@@ -78,8 +84,54 @@ public class JSONParser {
         return user;
     }
 
-    public HashMap<Integer, Pool> parsePoolInformation(String poolInfo){
-        return this.pools;
+    public HashMap<Integer, HashMap<Integer, BlockNumber>> parsePoolInformation(){
+        apicall = new APICall();
+        String poolInformation = apicall.getPoolInformation("https://slushpool.com/stats/json/1685801-8b72ca0d0e6857fe67e61f50883ffe14");
+        Integer id = 0;
+
+        try {
+            JSONObject poolObject = new JSONObject(poolInformation);
+
+            JSONObject block = poolObject.getJSONObject("blocks");
+
+            for(int i = 0; i < poolObject.length(); i++){
+                JSONObject blockNR = block.getJSONObject("495011");
+
+                String maturePool = blockNR.getString("is_mature");
+                String dateFoundPool = blockNR.getString("date_found");
+                String hashPool = blockNR.getString("hash");
+                String confirmationPool = blockNR.getString("confirmations");
+                String totalSharePool = blockNR.getString("total_shares");
+                String totalScorePool = blockNR.getString("total_score");
+                String rewardPool = blockNR.getString("reward");
+                String miningDurationPool = blockNR.getString("mining_duration");
+                String dateStartedPool = blockNR.getString("date_started");
+                String rewardNMCPool = blockNR.getString("nmc_reward");
+
+                //Double blockNr = Double.valueOf(blockNR.getDouble("495011"));
+                Boolean mature = Boolean.valueOf(maturePool);
+                String dateFound = String.valueOf(dateFoundPool);
+                String hash = String.valueOf(hashPool);
+                Double confirmation = Double.valueOf(confirmationPool);
+                Double totalShare = Double.valueOf(totalSharePool);
+                Double totalScore = Double.valueOf(totalScorePool);
+                Double reward = Double.valueOf(rewardPool);
+                Double miningDuration = Double.valueOf(miningDurationPool);
+                String dateStarted = String.valueOf(dateStartedPool);
+
+                this.blockNumber = new BlockNumber(mature, dateFound, hash, confirmation, totalShare, totalScore, reward,
+                        miningDuration, dateStarted);
+
+                blockNumbers.put(i, blockNumber);
+                pools.put(1, blockNumbers);
+            }
+
+
+        }catch (JSONException jsonEx){
+            jsonEx.getLocalizedMessage();
+        }
+
+        return pools;
     }
 
     public HashMap<Integer, APICall> getAPICalls(){return this.apiCalls;}
