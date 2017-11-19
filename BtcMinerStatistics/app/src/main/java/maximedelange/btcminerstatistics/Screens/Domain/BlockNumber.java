@@ -56,4 +56,11 @@ public class BlockNumber extends Pool {
     public HashMap<Integer, User> getUsers(){return this.users;}
 
     public HashMap<Integer, JSONParser> getPoolInformation(){return this.poolInformation;}
+
+    @Override
+    public String toString(){
+        return "Date found: " + getDateFound() + " Date started: " + getDateStarted() + " Mature: " + getMature()
+                + " Confirmation: " + getConfirmation() + " Hash: " + getHash() + " Mining duration: " + getMiningDuration()
+                + " Total score: " + getTotalScore() + " Total share:" + getTotalShare() + " Reward: " + getReward();
+    }
 }

@@ -28,6 +28,10 @@
         <activity
             android:name=".Screens.Screens.PoolScreen"
             android:label="@string/title_activity_pool_screen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Screens.Screens.BlockInformationScreen"
+            android:label="@string/title_activity_block_information_screen"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
