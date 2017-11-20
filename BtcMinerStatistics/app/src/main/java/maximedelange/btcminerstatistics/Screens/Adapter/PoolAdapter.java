@@ -53,6 +53,9 @@ public class PoolAdapter extends BaseAdapter {
         if (vi == null)
             vi = inflater.inflate(R.layout.pool_listview, null);
         TextView blockNr = (TextView) vi.findViewById(R.id.txtBlockNr);
+        TextView blockInformation = (TextView) vi.findViewById(R.id.txtBlockInfo);
+        TextView blockDescription = (TextView) vi.findViewById(R.id.txtDescription);
+
         TextView dateStarted = (TextView) vi.findViewById(R.id.txtDateStarted);
         TextView confirmation = (TextView) vi.findViewById(R.id.txtConfirmation);
         TextView totalScore = (TextView) vi.findViewById(R.id.txtTotalScores);
@@ -63,16 +66,19 @@ public class PoolAdapter extends BaseAdapter {
         TextView totalShare = (TextView) vi.findViewById(R.id.txtTotalShares);
         TextView mature = (TextView) vi.findViewById(R.id.txtIsMature);
 
+        blockInformation.setText("BLOCK INFO");
+        blockDescription.setText("BLOCK DESCRIPTION");
+
         //blockNr.setText(String.valueOf("Block number: "));
-        dateStarted.setText("Date started: " + data[position].getDateStarted());
-        confirmation.setText(String.valueOf("Confirmation: " + data[position].getConfirmation()));
+        dateStarted.setText("DATE STARTED: " + data[position].getDateStarted());
+        confirmation.setText(String.valueOf("CONFIRMATION: " + data[position].getConfirmation()));
         totalScore.setText(String.valueOf("Total score: " + data[position].getTotalScore()));
-        dateFound.setText("Date found: " + data[position].getDateFound());
-        reward.setText(String.valueOf("Reward: " + data[position].getReward()));
-        miningDuration.setText(String.valueOf("Mining duration: " + data[position].getMiningDuration()));
-        hashrate.setText(String.valueOf("Hashrate: " + data[position].getHash()));
-        totalShare.setText(String.valueOf("Total share: " + data[position].getTotalShare()));
-        mature.setText(String.valueOf("Mature: " + data[position].getMature()));
+        dateFound.setText("DATE FOUND: " + data[position].getDateFound());
+        reward.setText(String.valueOf("REWARD: " + data[position].getReward()));
+        miningDuration.setText(String.valueOf("MINING DURATION: " + data[position].getMiningDuration()));
+        hashrate.setText(String.valueOf("HASHRATE: " + data[position].getHash()));
+        totalShare.setText(String.valueOf("TOTAL SHARE: " + data[position].getTotalShare()));
+        mature.setText(String.valueOf("MATURE: " + data[position].getMature()));
 
         //System.out.println("Position: " + position + " datefound position: " + data[position].getDateFound());
         return vi;

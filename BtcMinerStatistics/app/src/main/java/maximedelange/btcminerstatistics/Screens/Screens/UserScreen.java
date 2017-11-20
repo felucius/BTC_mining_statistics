@@ -1,11 +1,14 @@
 package maximedelange.btcminerstatistics.Screens.Screens;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -37,7 +40,8 @@ public class UserScreen extends AppCompatActivity {
 
     public void changeNavigationBar(){
         setTitle("Account information");
-        //getActionBar().setIcon(R.mipmap.ic_launcher);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#071e22")));
     }
 
     public void displayUserInformation(){

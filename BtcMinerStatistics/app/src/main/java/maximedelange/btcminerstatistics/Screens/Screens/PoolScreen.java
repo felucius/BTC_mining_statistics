@@ -1,22 +1,17 @@
 package maximedelange.btcminerstatistics.Screens.Screens;
 
-import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,8 +20,6 @@ import maximedelange.btcminerstatistics.Screens.Adapter.PoolAdapter;
 import maximedelange.btcminerstatistics.Screens.Domain.BlockNumber;
 import maximedelange.btcminerstatistics.Screens.Domain.JSONParser;
 import maximedelange.btcminerstatistics.Screens.Domain.Pool;
-
-import static java.util.Arrays.asList;
 
 public class PoolScreen extends AppCompatActivity {
     // Fields
@@ -37,6 +30,7 @@ public class PoolScreen extends AppCompatActivity {
     private ListView listView = null;
     private ArrayList<BlockNumber> blockNumberList = null;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,55 +43,16 @@ public class PoolScreen extends AppCompatActivity {
         pools = new HashMap<>();
         jsonParser = new JSONParser();
         apiCall();
-        //displayPoolInformation();
-        showListOfBlocks2();
-        //showListOfBlocks();
+        showListOfBlocks();
     }
 
     public void changeNavigationBar(){
         setTitle("Pool information");
-        //getActionBar().setIcon(R.mipmap.ic_launcher);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#071e22")));
     }
 
-    public void displayPoolInformation(){
-        blockNumbers = new HashMap<>();
-        Integer id = 1;
-        /*
-        if(pools != null){
-            TextView blockNr = (TextView) findViewById(R.id.txtBlockNr);
-            TextView dateStarted = (TextView) findViewById(R.id.txtDateStarted);
-            TextView confirmation = (TextView) findViewById(R.id.txtConfirmation);
-            TextView totalScore = (TextView) findViewById(R.id.txtTotalScores);
-            TextView dateFound = (TextView) findViewById(R.id.txtDateFound);
-            TextView reward = (TextView) findViewById(R.id.txtReward);
-            TextView miningDuration = (TextView) findViewById(R.id.txtMiningDuration);
-            TextView hashrate = (TextView) findViewById(R.id.txtHashRate);
-            TextView totalShare = (TextView) findViewById(R.id.txtTotalShares);
-            TextView mature = (TextView) findViewById(R.id.txtIsMature);
-
-            for(Map.Entry<Integer, HashMap<Integer, BlockNumber>> pool : pools.entrySet()){
-                blockNumbers = pool.getValue();
-            }
-
-            for(Map.Entry<Integer, BlockNumber> blockNumber : blockNumbers.entrySet()){
-                blockNr.setText(String.valueOf("Block number: " + id));
-                dateStarted.setText("Date started: " + blockNumber.getValue().getDateStarted());
-                confirmation.setText(String.valueOf("Confirmation: " + blockNumber.getValue().getConfirmation()));
-                totalScore.setText(String.valueOf("Total score: " + blockNumber.getValue().getTotalScore()));
-                dateFound.setText("Date found: " + blockNumber.getValue().getDateFound());
-                reward.setText(String.valueOf("Reward: " + blockNumber.getValue().getReward()));
-                miningDuration.setText(String.valueOf("Mining duration: " + blockNumber.getValue().getMiningDuration()));
-                hashrate.setText(String.valueOf("Hashrate: " + blockNumber.getValue().getHash()));
-                totalShare.setText(String.valueOf("Total share: " + blockNumber.getValue().getTotalShare()));
-                mature.setText(String.valueOf("Mature: " + blockNumber.getValue().getMature()));
-
-                id ++;
-            }
-        }
-        */
-    }
-
-    public void showListOfBlocks2(){
+    public void showListOfBlocks(){
         blockNumberList = new ArrayList<>();
         for(Map.Entry<Integer, HashMap<Integer, BlockNumber>> pool : pools.entrySet()){
             blockNumbers = pool.getValue();
