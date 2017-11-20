@@ -15,10 +15,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!--
+        <ExpandableListView
+            android:id="@+id/expandableListviewPool"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+            -->
+
+
         <ListView
             android:id="@+id/listviewPool"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="@color/colorDarkGreen"
+            android:dividerHeight="15dp" />
 
         <!--
         <TextView

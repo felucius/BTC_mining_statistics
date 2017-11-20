@@ -20,6 +20,12 @@
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorRed" />
+
+        <TextView
             android:id="@+id/txtBlockInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,7 +38,7 @@
             android:background="@color/colorGreen"
             android:gravity="center"
             android:text="TextView"
-            android:textColor="@color/colorBeige"
+            android:textColor="@color/colorLightGreen"
             android:textSize="18sp"
             tools:layout_editor_absoluteX="356dp"
             tools:layout_editor_absoluteY="0dp" />
@@ -96,7 +102,7 @@
             android:background="@color/colorGreen"
             android:gravity="center"
             android:text="TextView"
-            android:textColor="@color/colorBeige"
+            android:textColor="@color/colorLightGreen"
             android:textSize="18sp" />
 
         <TextView
@@ -152,8 +158,8 @@
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorRed"/>
+            android:layout_height="1dp"
+            android:background="@color/colorRed" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
