@@ -95,7 +95,7 @@ public class JSONParser {
             JSONObject block = poolObject.getJSONObject("blocks");
 
             for(int i = 0; i < poolObject.length(); i++){
-                JSONObject blockNR = block.getJSONObject("495011");
+                JSONObject blockNR = block.getJSONObject("495296");
 
                 String maturePool = blockNR.getString("is_mature");
                 String dateFoundPool = blockNR.getString("date_found");

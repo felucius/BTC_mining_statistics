@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorLightGreen">
+    android:background="@color/colorBeige">
 
 
     <LinearLayout
@@ -40,6 +40,7 @@
             android:text="TextView"
             android:textColor="@color/colorLightGreen"
             android:textSize="18sp"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="356dp"
             tools:layout_editor_absoluteY="0dp" />
 
@@ -52,7 +53,8 @@
             android:layout_toRightOf="@+id/imageView2"
             android:gravity="center"
             android:text="TextView"
-            android:textColor="@color/colorBeige"
+            android:textColor="@color/colorDarkGreen"
+            android:textStyle="bold"
             app:layout_constraintRight_toRightOf="parent"
             tools:layout_editor_absoluteY="54dp" />
 
@@ -65,7 +67,8 @@
             android:layout_toRightOf="@+id/imageView2"
             android:gravity="center"
             android:text="TextView"
-            android:textColor="@color/colorBeige"
+            android:textColor="@color/colorDarkGreen"
+            android:textStyle="bold"
             app:layout_constraintRight_toRightOf="parent"
             tools:layout_editor_absoluteY="73dp" />
 
@@ -78,7 +81,8 @@
             android:layout_toRightOf="@+id/imageView2"
             android:gravity="center"
             android:text="TextView"
-            android:textColor="@color/colorBeige"
+            android:textColor="@color/colorDarkGreen"
+            android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             tools:layout_editor_absoluteY="193dp" />
 
@@ -91,7 +95,8 @@
             android:layout_toRightOf="@+id/imageView2"
             android:gravity="center"
             android:text="TextView"
-            android:textColor="@color/colorBeige"
+            android:textColor="@color/colorDarkGreen"
+            android:textStyle="bold"
             app:layout_constraintRight_toRightOf="parent"
             tools:layout_editor_absoluteY="35dp" />
 
@@ -103,7 +108,8 @@
             android:gravity="center"
             android:text="TextView"
             android:textColor="@color/colorLightGreen"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtTotalShares"
@@ -111,7 +117,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="TextView"
-            android:textColor="@color/colorBeige"
+            android:textColor="@color/colorDarkGreen"
+            android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             tools:layout_editor_absoluteY="155dp" />
 
@@ -121,7 +128,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="TextView"
-            android:textColor="@color/colorBeige"
+            android:textColor="@color/colorDarkGreen"
+            android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             tools:layout_editor_absoluteY="136dp" />
 
@@ -131,7 +139,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="TextView"
-            android:textColor="@color/colorBeige"
+            android:textColor="@color/colorDarkGreen"
+            android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             tools:layout_editor_absoluteY="117dp" />
 
@@ -141,7 +150,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="TextView"
-            android:textColor="@color/colorBeige"
+            android:textColor="@color/colorDarkGreen"
+            android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             tools:layout_editor_absoluteY="212dp" />
 
@@ -151,7 +161,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="TextView"
-            android:textColor="@color/colorBeige"
+            android:textColor="@color/colorDarkGreen"
+            android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             tools:layout_editor_absoluteY="174dp" />
 
