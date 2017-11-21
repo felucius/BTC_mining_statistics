@@ -11,14 +11,15 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import maximedelange.btcminerstatistics.R;
 
 public class HomeScreen extends AppCompatActivity {
 
     // Fields
-    private ImageButton gotoUserScreen = null;
-    private ImageButton gotoPoolScreen = null;
+    private TextView gotoUserScreen = null;
+    private TextView gotoPoolScreen = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +56,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void navigateToUserScreen(){
-        gotoUserScreen = (ImageButton) findViewById(R.id.btnUserScreen);
+        gotoUserScreen = (TextView) findViewById(R.id.txtUserScreen);
         gotoUserScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,7 +67,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void navigateToPoolScreen(){
-        gotoPoolScreen = (ImageButton) findViewById(R.id.btnPoolScreen);
+        gotoPoolScreen = (TextView) findViewById(R.id.txtPoolScreen);
         gotoPoolScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

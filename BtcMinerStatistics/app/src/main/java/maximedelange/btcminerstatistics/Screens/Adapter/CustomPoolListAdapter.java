@@ -2,6 +2,7 @@ package maximedelange.btcminerstatistics.Screens.Adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import maximedelange.btcminerstatistics.R;
 import maximedelange.btcminerstatistics.Screens.Domain.BlockNumber;
+import maximedelange.btcminerstatistics.Screens.Domain.JSONParser;
 
 /**
  * Created by M on 11/20/2017.
@@ -21,9 +23,12 @@ import maximedelange.btcminerstatistics.Screens.Domain.BlockNumber;
 public class CustomPoolListAdapter extends BaseExpandableListAdapter{
     private Context context;
     private List<String> expandableListTitle;
-    private HashMap<String, List<BlockNumber>> expandableListDetail;
+    private HashMap<String, List<String>> expandableListDetail;
+    private HashMap<Integer, HashMap<Integer, BlockNumber>> pools = null;
+    private JSONParser jsonParser = null;
 
-    public CustomPoolListAdapter(Context context, List<String> expandableListTitle, HashMap<String, List<BlockNumber>> expandableListDetail) {
+
+    public CustomPoolListAdapter(Context context, List<String> expandableListTitle, HashMap<String, List<String>> expandableListDetail) {
         this.context = context;
         this.expandableListTitle = expandableListTitle;
         this.expandableListDetail = expandableListDetail;
@@ -98,5 +103,11 @@ public class CustomPoolListAdapter extends BaseExpandableListAdapter{
     @Override
     public boolean isChildSelectable(int listPosition, int expandedListPosition) {
         return true;
+    }
+
+    public void apiCall(){
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        pools = jsonParser.parsePoolInformation();
     }
 }

@@ -8,30 +8,49 @@
     tools:context="maximedelange.btcminerstatistics.Screens.Screens.HomeScreen"
     tools:showIn="@layout/activity_home_screen">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorBeige"
         android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/btnUserScreen"
+        <TextView
+            android:id="@+id/txtUserScreen"
             android:layout_width="match_parent"
             android:layout_height="177dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="47dp"
+            android:background="@color/colorGreen"
+            android:gravity="center"
+            android:text="ACCOUNT"
+            android:textColor="@color/colorLightGreen"
+            android:textSize="30sp"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:srcCompat="@mipmap/ic_launcher"
             tools:layout_editor_absoluteY="70dp" />
 
-        <ImageButton
-            android:id="@+id/btnPoolScreen"
+        <TextView
+            android:id="@+id/txtPoolScreen"
             android:layout_width="match_parent"
             android:layout_height="170dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/txtUserScreen"
+            android:layout_marginTop="47dp"
+            android:background="@color/colorGreen"
+            android:gravity="center"
+            android:text="POOL"
+            android:textColor="@color/colorLightGreen"
+            android:textSize="30sp"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:srcCompat="@mipmap/ic_launcher"
             tools:layout_editor_absoluteY="247dp" />
-    </LinearLayout>
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

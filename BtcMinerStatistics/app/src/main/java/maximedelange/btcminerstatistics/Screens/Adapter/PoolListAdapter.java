@@ -36,40 +36,36 @@ public class PoolListAdapter {
         return blockNumberList;
     }
 
-    public static HashMap<String, List<BlockNumber>> getData() {
+    public static HashMap<String, List<String>> getData() {
 
-        HashMap<String, List<BlockNumber>> expandableListDetail = new HashMap<String, List<BlockNumber>>();
+        HashMap<String, List<String>> expandableListDetail = new HashMap<String, List<String>>();
 
-        List<BlockNumber> cricket = new ArrayList<BlockNumber>();
-        /*
+        List<String> cricket = new ArrayList<String>();
+
         cricket.add("India");
         cricket.add("Pakistan");
         cricket.add("Australia");
         cricket.add("England");
         cricket.add("South Africa");
-        */
 
-        List<BlockNumber> football = new ArrayList<BlockNumber>();
-        /*
+
+        List<String> football = new ArrayList<String>();
+
         football.add("Brazil");
         football.add("Spain");
         football.add("Germany");
         football.add("Netherlands");
         football.add("Italy");
-        */
 
-        List<BlockNumber> basketball = new ArrayList<BlockNumber>();
-        /*
+
+        List<String> basketball = new ArrayList<String>();
+
         basketball.add("United States");
         basketball.add("Spain");
         basketball.add("Argentina");
         basketball.add("France");
         basketball.add("Russia");
-        */
 
-        for(int i = 0; i < blocks.length; i++){
-            expandableListDetail.put(blocks[i].getDateFound(), blockNumberList);
-        }
 
         expandableListDetail.put("CRICKET TEAMS", cricket);
         expandableListDetail.put("FOOTBALL TEAMS", football);

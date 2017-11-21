@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import maximedelange.btcminerstatistics.R;
@@ -57,6 +58,7 @@ public class UserScreen extends AppCompatActivity {
             TextView lastScore = (TextView) findViewById(R.id.txtScore);
             TextView alive = (TextView) findViewById(R.id.txtAlive);
             TextView wallet = (TextView) findViewById(R.id.txtWallet);
+            ImageView profilePicture = (ImageView) findViewById(R.id.imgProfile);
 
             username.setText("Username: " + user.getUsername());
             unconfirmedReward.setText(String.valueOf("Unconfirmed reward:" + user.getUnconfirmedReward()));
@@ -69,6 +71,7 @@ public class UserScreen extends AppCompatActivity {
             lastScore.setText(String.valueOf("Last score: " + user.getLastShare()));
             alive.setText(String.valueOf("Worder alive: " + user.getAlive()));
             wallet.setText("Wallet: " + user.getWallet());
+            profilePicture.setImageResource(R.mipmap.maxime);
         }else{
             System.out.println("No user available.");
         }
