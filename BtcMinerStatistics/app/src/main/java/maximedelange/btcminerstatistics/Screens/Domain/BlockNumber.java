@@ -1,12 +1,13 @@
 package maximedelange.btcminerstatistics.Screens.Domain;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
  * Created by M on 11/19/2017.
  */
 
-public class BlockNumber extends Pool {
+public class BlockNumber extends Pool implements Serializable {
     // Fields
     private Integer ID = null;
     private Boolean mature = null;

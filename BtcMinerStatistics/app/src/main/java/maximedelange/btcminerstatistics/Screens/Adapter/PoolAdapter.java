@@ -54,35 +54,10 @@ public class PoolAdapter extends BaseAdapter {
             vi = inflater.inflate(R.layout.pool_listview, null);
         TextView blockNr = (TextView) vi.findViewById(R.id.txtBlockNr);
         ImageView blockImage = (ImageView) vi.findViewById(R.id.imageBlock);
-        //TextView blockInformation = (TextView) vi.findViewById(R.id.txtBlockInfo);
-        //TextView blockDescription = (TextView) vi.findViewById(R.id.txtDescription);
-
-        //TextView dateStarted = (TextView) vi.findViewById(R.id.txtDateStarted);
-        //TextView confirmation = (TextView) vi.findViewById(R.id.txtConfirmation);
-        //TextView totalScore = (TextView) vi.findViewById(R.id.txtTotalScores);
-        //TextView dateFound = (TextView) vi.findViewById(R.id.txtDateFound);
-        //TextView reward = (TextView) vi.findViewById(R.id.txtReward);
-        //TextView miningDuration = (TextView) vi.findViewById(R.id.txtMiningDuration);
-        //TextView hashrate = (TextView) vi.findViewById(R.id.txtHashRate);
-        //TextView totalShare = (TextView) vi.findViewById(R.id.txtTotalShares);
-        //TextView mature = (TextView) vi.findViewById(R.id.txtIsMature);
-
-        //blockInformation.setText("BLOCK INFO");
-        //blockDescription.setText("BLOCK DESCRIPTION");
 
         blockNr.setText(String.valueOf("BLOCK # " + data[position].getID()));
         blockImage.setImageResource(R.mipmap.datablockblack);
-        //dateStarted.setText("DATE STARTED: " + data[position].getDateStarted());
-        //confirmation.setText(String.valueOf("CONFIRMATION: " + data[position].getConfirmation()));
-        //totalScore.setText(String.valueOf("Total score: " + data[position].getTotalScore()));
-        //dateFound.setText("DATE FOUND: " + data[position].getDateFound());
-        //reward.setText(String.valueOf("REWARD: " + data[position].getReward()));
-        //miningDuration.setText(String.valueOf("MINING DURATION: " + data[position].getMiningDuration()));
-        //hashrate.setText(String.valueOf("HASHRATE: " + data[position].getHash()));
-        //totalShare.setText(String.valueOf("TOTAL SHARE: " + data[position].getTotalShare()));
-        //mature.setText(String.valueOf("MATURE: " + data[position].getMature()));
 
-        //System.out.println("Position: " + position + " datefound position: " + data[position].getDateFound());
         return vi;
     }
 }

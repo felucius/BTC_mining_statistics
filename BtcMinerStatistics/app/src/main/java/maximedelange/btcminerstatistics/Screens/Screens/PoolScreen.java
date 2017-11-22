@@ -1,9 +1,11 @@
 package maximedelange.btcminerstatistics.Screens.Screens;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.os.StrictMode;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.ActionBar;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -86,7 +89,15 @@ public class PoolScreen extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                System.out.println("ID Postition: " + poolAdapter.getItem(position));
+                Intent detailedPoolInformation = new Intent(view.getContext(), PoolDetailScreen.class);
+                Object blockObject =  poolAdapter.getItem(position);
+                blockNumber = (BlockNumber)blockObject;
+
+                System.out.println(blockNumber);
+                System.out.println(blockNumber.getConfirmation());
+
+                detailedPoolInformation.putExtra("poolInformation", (Serializable) blockNumber);
+                startActivity(detailedPoolInformation);
             }
         });
     }
