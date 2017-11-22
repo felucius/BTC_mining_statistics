@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 public class BlockNumber extends Pool {
     // Fields
+    private Integer ID = null;
     private Boolean mature = null;
     private String dateFound = null;
     private String hash = null;
@@ -21,8 +22,9 @@ public class BlockNumber extends Pool {
     private HashMap<Integer, User> users;
     private HashMap<Integer, JSONParser> poolInformation;
 
-    public BlockNumber(Boolean mature, String dateFound, String hash, Double confirmation, Double totalShare,
+    public BlockNumber(Integer ID, Boolean mature, String dateFound, String hash, Double confirmation, Double totalShare,
                        Double totalScore, Double reward, Double miningDuration, String dateStarted){
+        this.ID = ID;
         this.mature = mature;
         this.dateFound = dateFound;
         this.hash = hash;
@@ -35,6 +37,8 @@ public class BlockNumber extends Pool {
     }
 
     // Methods
+    public Integer getID(){return this.ID;}
+
     public Boolean getMature(){return this.mature;}
 
     public String getDateFound(){return this.dateFound;}

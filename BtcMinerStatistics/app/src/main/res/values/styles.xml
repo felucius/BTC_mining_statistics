@@ -6,7 +6,8 @@
         <item name="colorPrimary">@color/colorDarkGreen</item>
         <item name="colorPrimaryDark">@color/colorRed</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/colorDarkGreen</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/colorDarkGreen
+        </item>
     </style>
 
     <style name="AppTheme.NoActionBar">

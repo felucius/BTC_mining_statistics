@@ -9,12 +9,10 @@ import java.util.HashMap;
 
 public class Pool {
     // Fields
-    //private Double blocks = null;
     private HashMap<Integer, BlockNumber> blockNumbers = null;
 
     // Constructor
     public Pool(){
-        //this.blocks = blocks;
         this.blockNumbers = new HashMap<>();
     }
 

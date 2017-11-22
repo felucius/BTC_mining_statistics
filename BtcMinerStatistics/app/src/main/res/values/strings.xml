@@ -4,4 +4,5 @@
     <string name="title_activity_user_screen">UserScreen</string>
     <string name="title_activity_pool_screen">PoolScreen</string>
     <string name="title_activity_block_information_screen">BlockInformationScreen</string>
+    <string name="title_activity_pool_detail_screen">PoolDetailScreen</string>
 </resources>

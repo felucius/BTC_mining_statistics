@@ -119,7 +119,7 @@ public class JSONParser {
                 Double miningDuration = Double.valueOf(miningDurationPool);
                 String dateStarted = String.valueOf(dateStartedPool);
 
-                this.blockNumber = new BlockNumber(mature, dateFound, hash, confirmation, totalShare, totalScore, reward,
+                this.blockNumber = new BlockNumber(i, mature, dateFound, hash, confirmation, totalShare, totalScore, reward,
                         miningDuration, dateStarted);
 
                 blockNumbers.put(i, blockNumber);

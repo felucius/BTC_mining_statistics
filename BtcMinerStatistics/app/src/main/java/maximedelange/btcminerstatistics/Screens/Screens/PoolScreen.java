@@ -9,6 +9,8 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -25,10 +27,12 @@ public class PoolScreen extends AppCompatActivity {
     // Fields
     private HashMap<Integer, HashMap<Integer, BlockNumber>> pools = null;
     private Pool pool = null;
+    private BlockNumber blockNumber = null;
     private HashMap<Integer, BlockNumber> blockNumbers = null;
     private JSONParser jsonParser = null;
     private ListView listView = null;
     private ArrayList<BlockNumber> blockNumberList = null;
+    private PoolAdapter poolAdapter = null;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -44,6 +48,7 @@ public class PoolScreen extends AppCompatActivity {
         jsonParser = new JSONParser();
         apiCall();
         showListOfBlocks();
+        showDetailedPoolInformation();
     }
 
     public void changeNavigationBar(){
@@ -65,9 +70,25 @@ public class PoolScreen extends AppCompatActivity {
         BlockNumber[] blocks = new BlockNumber[blockNumberList.size()];
         blocks = blockNumberList.toArray(blocks);
 
+        poolAdapter = new PoolAdapter(this, blocks);
         listView = (ListView) findViewById(R.id.listviewPool);
-        listView.setAdapter(new PoolAdapter(this, blocks));
+        //listView.setAdapter(new PoolAdapter(this, blocks));
+        listView.setAdapter(poolAdapter);
+    }
 
+    public void getSelectedBlock(Integer id){
+        blockNumberList.get(id).getID();
+        System.out.println("ID: " + blockNumberList.get(id).getID());
+
+    }
+
+    public void showDetailedPoolInformation(){
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                System.out.println("ID Postition: " + poolAdapter.getItem(position));
+            }
+        });
     }
 
     public void apiCall(){
