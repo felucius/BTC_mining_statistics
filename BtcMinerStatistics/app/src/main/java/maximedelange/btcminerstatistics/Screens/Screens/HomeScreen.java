@@ -18,8 +18,8 @@ import maximedelange.btcminerstatistics.R;
 public class HomeScreen extends AppCompatActivity {
 
     // Fields
-    private TextView gotoUserScreen = null;
-    private TextView gotoPoolScreen = null;
+    private ImageButton gotoUserScreen = null;
+    private ImageButton gotoPoolScreen = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +56,8 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void navigateToUserScreen(){
-        gotoUserScreen = (TextView) findViewById(R.id.txtUserScreen);
+        gotoUserScreen = (ImageButton) findViewById(R.id.btnUserScreen);
+        gotoUserScreen.setImageResource(R.mipmap.accountavatar);
         gotoUserScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,7 +68,8 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void navigateToPoolScreen(){
-        gotoPoolScreen = (TextView) findViewById(R.id.txtPoolScreen);
+        gotoPoolScreen = (ImageButton) findViewById(R.id.btnPoolScreen);
+        gotoPoolScreen.setImageResource(R.mipmap.pooldata);
         gotoPoolScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

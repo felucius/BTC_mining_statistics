@@ -29,7 +29,6 @@ import maximedelange.btcminerstatistics.Screens.Domain.Pool;
 public class PoolScreen extends AppCompatActivity {
     // Fields
     private HashMap<Integer, HashMap<Integer, BlockNumber>> pools = null;
-    private Pool pool = null;
     private BlockNumber blockNumber = null;
     private HashMap<Integer, BlockNumber> blockNumbers = null;
     private JSONParser jsonParser = null;
@@ -46,7 +45,6 @@ public class PoolScreen extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         changeNavigationBar();
-        pool = new Pool();
         pools = new HashMap<>();
         jsonParser = new JSONParser();
         apiCall();
@@ -77,12 +75,6 @@ public class PoolScreen extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listviewPool);
         //listView.setAdapter(new PoolAdapter(this, blocks));
         listView.setAdapter(poolAdapter);
-    }
-
-    public void getSelectedBlock(Integer id){
-        blockNumberList.get(id).getID();
-        System.out.println("ID: " + blockNumberList.get(id).getID());
-
     }
 
     public void showDetailedPoolInformation(){

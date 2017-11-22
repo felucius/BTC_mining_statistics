@@ -40,7 +40,7 @@ public class UserScreen extends AppCompatActivity {
     }
 
     public void changeNavigationBar(){
-        setTitle("Account information");
+        setTitle("ACCOUNT INFORMATION");
         ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#071e22")));
     }
@@ -60,17 +60,17 @@ public class UserScreen extends AppCompatActivity {
             TextView wallet = (TextView) findViewById(R.id.txtWallet);
             ImageView profilePicture = (ImageView) findViewById(R.id.imgProfile);
 
-            username.setText("Username: " + user.getUsername());
-            unconfirmedReward.setText(String.valueOf("Unconfirmed reward:" + user.getUnconfirmedReward()));
-            mineRating.setText(String.valueOf("Mining rating: " + user.getRating()));
-            estimatedReward.setText(String.valueOf("Estimated reward: " + user.getEstimatedReward()));
-            hashrate.setText(String.valueOf("Hashrate: " + user.getHashRate()));
-            threshold.setText(String.valueOf("Threshold: " + user.getSendThreshold()));
-            confirmedReward.setText(String.valueOf("Conformed reward: " + user.getConfirmedReward()));
-            lastShare.setText(String.valueOf("Last share: " + user.getLastShare()));
-            lastScore.setText(String.valueOf("Last score: " + user.getLastShare()));
-            alive.setText(String.valueOf("Worder alive: " + user.getAlive()));
-            wallet.setText("Wallet: " + user.getWallet());
+            username.setText("USERNAME: " + user.getUsername());
+            unconfirmedReward.setText(String.valueOf("UNCONFIRMED REWARD:" + user.getUnconfirmedReward()));
+            mineRating.setText(String.valueOf("MINING RATING: " + user.getRating()));
+            estimatedReward.setText(String.valueOf("ESTIMATED REWARD: " + user.getEstimatedReward()));
+            hashrate.setText(String.valueOf("HASHRATE: " + user.getHashRate()));
+            threshold.setText(String.valueOf("THRESHOLD: " + user.getSendThreshold()));
+            confirmedReward.setText(String.valueOf("CONFIRMED REWARD: " + user.getConfirmedReward()));
+            lastShare.setText(String.valueOf("LAST SHARE: " + user.getLastShare()));
+            lastScore.setText(String.valueOf("LAST SCORE: " + user.getLastShare()));
+            alive.setText(String.valueOf("WORKER ALIVE: " + user.getAlive()));
+            wallet.setText("WALLET: " + user.getWallet());
             profilePicture.setImageResource(R.mipmap.maxime);
         }else{
             System.out.println("No user available.");

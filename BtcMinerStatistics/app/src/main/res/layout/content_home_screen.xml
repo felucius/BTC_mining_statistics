@@ -11,22 +11,41 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBeige"
+        android:background="@android:color/background_dark"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtUserScreen"
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorRed" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/textView9"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/darker_gray" />
+
+        <ImageButton
+            android:id="@+id/btnUserScreen"
             android:layout_width="match_parent"
             android:layout_height="177dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="47dp"
-            android:background="@color/colorGreen"
+            android:background="@android:color/background_dark"
             android:gravity="center"
+            android:scaleType="centerCrop"
             android:text="ACCOUNT"
-            android:textColor="@color/colorLightGreen"
             android:textSize="30sp"
+            android:textStyle="bold"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -34,23 +53,75 @@
             tools:layout_editor_absoluteY="70dp" />
 
         <TextView
-            android:id="@+id/txtPoolScreen"
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/btnUserScreen"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btnUserScreen"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="64dp"
+            android:text="ACCOUNT"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnPoolScreen"
             android:layout_width="match_parent"
             android:layout_height="170dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/txtUserScreen"
+            android:layout_below="@+id/btnUserScreen"
             android:layout_marginTop="47dp"
-            android:background="@color/colorGreen"
+            android:background="@android:color/background_dark"
             android:gravity="center"
-            android:text="POOL"
-            android:textColor="@color/colorLightGreen"
+            android:scaleType="centerCrop"
             android:textSize="30sp"
+            android:textStyle="bold"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:srcCompat="@mipmap/ic_launcher"
             tools:layout_editor_absoluteY="247dp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/btnPoolScreen"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/btnPoolScreen"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btnPoolScreen"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="58dp"
+            android:text="POOL"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
