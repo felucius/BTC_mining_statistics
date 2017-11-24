@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * Created by M on 11/17/2017.
@@ -88,14 +89,23 @@ public class JSONParser {
         apicall = new APICall();
         String poolInformation = apicall.getPoolInformation("https://slushpool.com/stats/json/1685801-8b72ca0d0e6857fe67e61f50883ffe14");
         Integer id = 0;
+        JSONObject blockID = null;
 
         try {
             JSONObject poolObject = new JSONObject(poolInformation);
 
+            // Receiving full json object.
             JSONObject block = poolObject.getJSONObject("blocks");
 
-            for(int i = 0; i < poolObject.length(); i++){
-                JSONObject blockNR = block.getJSONObject("495296");
+            // Retrieving keys from the dynamic json file.
+            Iterator key = block.keys();
+            // Looping through the key of the first object, which is the dynamic block number.
+            while(key.hasNext()){
+                id ++;
+                String blockNRR = (String) key.next();
+                blockID = block.getJSONObject(blockNRR);
+
+                JSONObject blockNR = blockID;
 
                 String maturePool = blockNR.getString("is_mature");
                 String dateFoundPool = blockNR.getString("date_found");
@@ -108,7 +118,6 @@ public class JSONParser {
                 String dateStartedPool = blockNR.getString("date_started");
                 String rewardNMCPool = blockNR.getString("nmc_reward");
 
-                //Double blockNr = Double.valueOf(blockNR.getDouble("495011"));
                 Boolean mature = Boolean.valueOf(maturePool);
                 String dateFound = String.valueOf(dateFoundPool);
                 String hash = String.valueOf(hashPool);
@@ -119,10 +128,10 @@ public class JSONParser {
                 Double miningDuration = Double.valueOf(miningDurationPool);
                 String dateStarted = String.valueOf(dateStartedPool);
 
-                this.blockNumber = new BlockNumber(i, mature, dateFound, hash, confirmation, totalShare, totalScore, reward,
+                this.blockNumber = new BlockNumber(id, mature, dateFound, hash, confirmation, totalShare, totalScore, reward,
                         miningDuration, dateStarted);
 
-                blockNumbers.put(i, blockNumber);
+                blockNumbers.put(id, blockNumber);
                 pools.put(1, blockNumbers);
             }
 
